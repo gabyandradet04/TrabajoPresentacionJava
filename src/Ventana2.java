@@ -34,9 +34,11 @@ public class Ventana2 extends javax.swing.JFrame {
         label3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         fondo2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         label2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
@@ -54,7 +56,7 @@ public class Ventana2 extends javax.swing.JFrame {
                 inicio2ActionPerformed(evt);
             }
         });
-        getContentPane().add(inicio2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, -1, -1));
+        getContentPane().add(inicio2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
 
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 13)); // NOI18N
@@ -62,12 +64,13 @@ public class Ventana2 extends javax.swing.JFrame {
         jTextArea1.setText("Nombre y Apellidos:\nGabriela Andrade Torrez\nD.N.I. permanente: \n95.044.697\nFecha de Nacimiento:\nCochabamba, junio 04 de 1988\nEstado Civil:\nCasada\nDomicilio:     \nSánchez de Loria Nº 1527 – C.A.B.A.\n");
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 280, 190));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 280, 180));
 
         label3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         label3.setText("Curriculum Vitae");
         getContentPane().add(label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton1.setText("Estudios");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -76,6 +79,7 @@ public class Ventana2 extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 90, -1));
 
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton2.setText("Experiencia");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -83,6 +87,14 @@ public class Ventana2 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 60, -1, -1));
+
+        jButton3.setText("Salir");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, -1, -1));
 
         fondo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cv1.jpg"))); // NOI18N
         getContentPane().add(fondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 350));
@@ -115,6 +127,11 @@ public class Ventana2 extends javax.swing.JFrame {
         v5.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+          System.exit(0);
+    }//GEN-LAST:event_jButton3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -156,6 +173,7 @@ public class Ventana2 extends javax.swing.JFrame {
     private javax.swing.JButton inicio2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel label2;

@@ -15,6 +15,9 @@ public class Ventana3 extends javax.swing.JFrame {
     /**                                       
      * Creates new form Ventana3
      */
+    int ap=0;
+     int monto=0;
+    
    
     
     public Ventana3() {
@@ -22,7 +25,9 @@ public class Ventana3 extends javax.swing.JFrame {
         simple.setVisible(false);
         doble.setVisible(false);
         triple.setVisible(false);
+        txt2.setVisible(false);
         setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -39,15 +44,17 @@ public class Ventana3 extends javax.swing.JFrame {
         simple = new javax.swing.JButton();
         doble = new javax.swing.JButton();
         triple = new javax.swing.JButton();
-        monto1 = new javax.swing.JButton();
+        apuesta = new javax.swing.JButton();
         label1 = new javax.swing.JLabel();
         txt1 = new javax.swing.JTextField();
-        btntateti = new javax.swing.JButton();
-        btnbanco = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txt2 = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         inicio3.setText("Inicio");
@@ -56,43 +63,52 @@ public class Ventana3 extends javax.swing.JFrame {
                 inicio3MouseClicked(evt);
             }
         });
-        getContentPane().add(inicio3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, -1, -1));
+        getContentPane().add(inicio3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
 
         label3.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        label3.setText("APLICACION");
-        getContentPane().add(label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 240, -1));
+        label3.setText("APUESTA");
+        getContentPane().add(label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 180, -1));
 
+        simple.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         simple.setText("Simple");
         simple.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 simpleMouseClicked(evt);
             }
         });
-        getContentPane().add(simple, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, -1));
+        getContentPane().add(simple, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, -1, -1));
 
+        doble.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         doble.setText("Doble");
         doble.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 dobleMouseClicked(evt);
             }
         });
-        getContentPane().add(doble, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, -1, -1));
+        doble.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dobleActionPerformed(evt);
+            }
+        });
+        getContentPane().add(doble, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, -1, -1));
 
+        triple.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         triple.setText("Triple");
         triple.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tripleMouseClicked(evt);
             }
         });
-        getContentPane().add(triple, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, -1, -1));
+        getContentPane().add(triple, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, -1, -1));
 
-        monto1.setText("Apuesta");
-        monto1.addMouseListener(new java.awt.event.MouseAdapter() {
+        apuesta.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        apuesta.setText("Iniciar apuesta");
+        apuesta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                monto1MouseClicked(evt);
+                apuestaMouseClicked(evt);
             }
         });
-        getContentPane().add(monto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 80, -1));
+        getContentPane().add(apuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, 120, 30));
 
         label1.setBackground(new java.awt.Color(102, 102, 102));
         label1.setFont(new java.awt.Font("Arial Rounded MT Bold", 3, 14)); // NOI18N
@@ -100,30 +116,30 @@ public class Ventana3 extends javax.swing.JFrame {
         getContentPane().add(label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 200, 30));
         getContentPane().add(txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 100, 30));
 
-        btntateti.setText("TATETI");
-        btntateti.addMouseListener(new java.awt.event.MouseAdapter() {
+        txt2.setColumns(20);
+        txt2.setRows(5);
+        jScrollPane1.setViewportView(txt2);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 270, 60));
+
+        jButton1.setText("Salir");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btntatetiMouseClicked(evt);
+                jButton1MouseClicked(evt);
             }
         });
-        btntateti.addActionListener(new java.awt.event.ActionListener() {
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, -1, -1));
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton2.setText("RESET");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btntatetiActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(btntateti, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, -1, -1));
 
-        btnbanco.setText("BANCO");
-        btnbanco.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnbancoMouseClicked(evt);
-            }
-        });
-        getContentPane().add(btnbanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, -1, -1));
-
-        jTextField1.setText("jTextField1");
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 320, 40));
-
+        fondo.setBackground(new java.awt.Color(255, 255, 255));
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ruleta.jpg"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 320));
 
@@ -137,64 +153,52 @@ public class Ventana3 extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_inicio3MouseClicked
 
-    private void monto1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_monto1MouseClicked
+    private void apuestaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_apuestaMouseClicked
         // TODO add your handling code here:
         simple.setVisible(true);
         doble.setVisible(true);
         triple.setVisible(true);
+        txt2.setVisible(true);
         
-    }//GEN-LAST:event_monto1MouseClicked
+        
+        
+    }//GEN-LAST:event_apuestaMouseClicked
 
     private void simpleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_simpleMouseClicked
         // TODO add your handling code here:
-        label1.setVisible(false);
-        txt1.setVisible(false);
-        monto1.setVisible(false);
-        simple.setVisible(false);
-        doble.setVisible(false);
-        triple.setVisible(false);
-        JOptionPane.showMessageDialog(null,"Usted realizo una apuesta SIMPLE");
+        monto= Integer.parseInt(this.txt1.getText());
+        ap= monto*1;
+        txt2.setText("Usted realizo una apuesta simple de $"+monto+"\n"+"Total apuesta de $"+String.valueOf(ap));    
     }//GEN-LAST:event_simpleMouseClicked
 
     private void dobleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dobleMouseClicked
         // TODO add your handling code here:label1.setVisible(false);
-        txt1.setVisible(false);
-        monto1.setVisible(false);
-        simple.setVisible(false);
-        doble.setVisible(false);
-        triple.setVisible(false);
-        JOptionPane.showMessageDialog(null,"Usted realizo una apuesta DOBLE");
+        monto= Integer.parseInt(this.txt1.getText());
+        ap= monto*2;
+        txt2.setText("Usted realizo una apuesta doble de $"+monto+"\n"+"Total apuesta de $"+String.valueOf(ap));
     }//GEN-LAST:event_dobleMouseClicked
 
     private void tripleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tripleMouseClicked
         // TODO add your handling code here:
-        label1.setVisible(false);
-        txt1.setVisible(false);
-        monto1.setVisible(false);
-        simple.setVisible(false);
-        doble.setVisible(false);
-        triple.setVisible(false);
-        JOptionPane.showMessageDialog(null,"Usted realizo una apuesta TRIPLE");
+        monto= Integer.parseInt(this.txt1.getText());
+        ap= monto*3;
+        txt2.setText("Usted realizo una apuesta triple de $"+monto+"\n"+"Total apuesta de $"+String.valueOf(ap));
     }//GEN-LAST:event_tripleMouseClicked
 
-    private void btntatetiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntatetiActionPerformed
+    private void dobleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dobleActionPerformed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_btntatetiActionPerformed
+    }//GEN-LAST:event_dobleActionPerformed
 
-    private void btntatetiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btntatetiMouseClicked
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
-        Tateti t1 =new Tateti();
-        t1.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_btntatetiMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_jButton1MouseClicked
 
-    private void btnbancoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnbancoMouseClicked
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        CajeroAutomatico c1= new CajeroAutomatico();
-        c1.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_btnbancoMouseClicked
+        txt1.setText("");
+        txt2.setText("");
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,17 +236,18 @@ public class Ventana3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnbanco;
-    private javax.swing.JButton btntateti;
+    private javax.swing.JButton apuesta;
     private javax.swing.JButton doble;
     private javax.swing.JLabel fondo;
     private javax.swing.JButton inicio3;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel label1;
     private javax.swing.JLabel label3;
-    private javax.swing.JButton monto1;
     private javax.swing.JButton simple;
     private javax.swing.JButton triple;
     private javax.swing.JTextField txt1;
+    private javax.swing.JTextArea txt2;
     // End of variables declaration//GEN-END:variables
 }

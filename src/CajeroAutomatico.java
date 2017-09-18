@@ -54,6 +54,7 @@ public class CajeroAutomatico extends javax.swing.JFrame {
         FONDO = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nombre.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -69,22 +70,24 @@ public class CajeroAutomatico extends javax.swing.JFrame {
 
         total.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         total.setText("TOTAL:");
-        getContentPane().add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, -1, -1));
+        getContentPane().add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, -1, -1));
         getContentPane().add(txt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 149, -1));
 
+        btndebito.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         btndebito.setText("DEBITO");
         btndebito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btndebitoActionPerformed(evt);
             }
         });
-        getContentPane().add(btndebito, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, -1, -1));
+        getContentPane().add(btndebito, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, -1, -1));
 
         debito.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         debito.setText("DEBITO");
-        getContentPane().add(debito, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, -1, -1));
-        getContentPane().add(txt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 149, -1));
+        getContentPane().add(debito, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, -1, -1));
+        getContentPane().add(txt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 149, -1));
 
+        btntotal.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         btntotal.setText("TOTAL");
         btntotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,41 +97,43 @@ public class CajeroAutomatico extends javax.swing.JFrame {
         getContentPane().add(btntotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, 80, -1));
         getContentPane().add(txt4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 149, -1));
 
+        btnagregar.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         btnagregar.setText("AGREGAR");
         btnagregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnagregarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnagregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, -1, -1));
+        getContentPane().add(btnagregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, -1, -1));
 
         monto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         monto.setText("MONTO:");
         getContentPane().add(monto, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, -1));
 
-        jButton1.setText("INICIO");
+        jButton1.setText("Inicio");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, -1));
 
-        jButton2.setText("APLICACION");
+        jButton2.setText("Salir");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 340, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 350, -1, -1));
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Cajero Automatico");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 340, -1));
 
         FONDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cajero1.jpg"))); // NOI18N
-        getContentPane().add(FONDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 580, 380));
+        getContentPane().add(FONDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -159,6 +164,9 @@ public class CajeroAutomatico extends javax.swing.JFrame {
         // TODO add your handling code here:
         cuenta=acumulador-deb;
         txt4.setText(String.valueOf(cuenta));
+        txt2.setText("");
+        txt3.setText("");
+        
     }//GEN-LAST:event_btntotalActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
@@ -170,9 +178,7 @@ public class CajeroAutomatico extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
-        Ventana3 v3 =new Ventana3();
-        v3.setVisible(true);
-        dispose();
+        System.exit(0);
     }//GEN-LAST:event_jButton2MouseClicked
 
     /**

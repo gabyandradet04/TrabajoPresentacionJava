@@ -32,7 +32,11 @@ public class Ventana1 extends javax.swing.JFrame {
         apli = new javax.swing.JButton();
         salir = new javax.swing.JButton();
         inicio1 = new javax.swing.JButton();
-        titulo1 = new javax.swing.JLabel();
+        btnbanco = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        titulo2 = new javax.swing.JLabel();
+        titulo3 = new javax.swing.JLabel();
+        titulo5 = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
@@ -53,15 +57,15 @@ public class Ventana1 extends javax.swing.JFrame {
                 presentacionActionPerformed(evt);
             }
         });
-        getContentPane().add(presentacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, -1, -1));
+        getContentPane().add(presentacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, -1, -1));
 
-        apli.setText("Aplicación");
+        apli.setText("Apuesta");
         apli.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 apliMouseClicked(evt);
             }
         });
-        getContentPane().add(apli, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, -1, -1));
+        getContentPane().add(apli, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
 
         salir.setText("Salir");
         salir.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -69,15 +73,41 @@ public class Ventana1 extends javax.swing.JFrame {
                 salirMouseClicked(evt);
             }
         });
-        getContentPane().add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
+        getContentPane().add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 290, -1, -1));
 
         inicio1.setText("Inicio");
-        getContentPane().add(inicio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, -1, -1));
+        getContentPane().add(inicio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
 
-        titulo1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 36)); // NOI18N
-        titulo1.setForeground(new java.awt.Color(255, 255, 255));
-        titulo1.setText("INICIO");
-        getContentPane().add(titulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 20, 130, -1));
+        btnbanco.setText("Banco");
+        btnbanco.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnbancoMouseClicked(evt);
+            }
+        });
+        getContentPane().add(btnbanco, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, -1, -1));
+
+        jButton2.setText("TaTeTi");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, -1, -1));
+
+        titulo2.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        titulo2.setForeground(new java.awt.Color(255, 255, 255));
+        titulo2.setText("PRESENTACION");
+        getContentPane().add(titulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 160, -1));
+
+        titulo3.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 36)); // NOI18N
+        titulo3.setForeground(new java.awt.Color(255, 255, 255));
+        titulo3.setText("INICIO");
+        getContentPane().add(titulo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 20, 130, -1));
+
+        titulo5.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        titulo5.setForeground(new java.awt.Color(255, 255, 255));
+        titulo5.setText("APLICACIONES");
+        getContentPane().add(titulo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 160, -1));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cv4.jpg"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 490, 340));
@@ -107,6 +137,20 @@ public class Ventana1 extends javax.swing.JFrame {
     private void presentacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_presentacionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_presentacionActionPerformed
+
+    private void btnbancoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnbancoMouseClicked
+        // TODO add your handling code here:
+        CajeroAutomatico c1= new CajeroAutomatico();
+        c1.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnbancoMouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        Tateti t1 =new Tateti();
+        t1.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -145,11 +189,15 @@ public class Ventana1 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton apli;
+    private javax.swing.JButton btnbanco;
     private javax.swing.JLabel fondo;
     private javax.swing.JButton inicio1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton presentacion;
     private javax.swing.JButton salir;
-    private javax.swing.JLabel titulo1;
+    private javax.swing.JLabel titulo2;
+    private javax.swing.JLabel titulo3;
+    private javax.swing.JLabel titulo5;
     // End of variables declaration//GEN-END:variables
 }

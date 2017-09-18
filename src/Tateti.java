@@ -16,12 +16,74 @@ import java.util.HashSet;
  * 
  * @author jose.zapatagom
  */
+import javax.swing.JOptionPane;
 public class Tateti extends javax.swing.JFrame {
 
     /**
      * Creates new form Tateti
-     */
-    public Tateti() {
+     
+    int x1;
+    int x2;
+    int x3;
+    int x4;
+    int x5;
+    int x6;
+    int x7;
+    int x8;
+    int x9;
+    
+        
+    public void ganador(){
+        if (x1.getText()=="X" && x2.getText()=="X" && x3.getText()=="X"){
+            JOptionPane.showMessageDialog(null, "Ganó!!!");        
+        }
+        if (x4.getText()=="X" && x5.getText()=="X" && x6.getText()=="X"){
+            JOptionPane.showMessageDialog(null, "Ganó!!!");        
+        }
+        if (x7.getText()=="X" && x8.getText()=="X" && x9.getText()=="X"){
+            JOptionPane.showMessageDialog(null, "Ganó!!!");        
+        }
+        if (x1.getText()=="X" && x4.getText()=="X" && x7.getText()=="X"){
+            JOptionPane.showMessageDialog(null, "Ganó!!!");        
+        }
+        if (x2.getText()=="X" && x5.getText()=="X" && x8.getText()=="X"){
+            JOptionPane.showMessageDialog(null, "Ganó!!!");        
+        }
+        if (x3.getText()=="X" && x6.getText()=="X" && x9.getText()=="X"){
+            JOptionPane.showMessageDialog(null, "Ganó!!!");        
+        }
+        if (x1.getText()=="X" && x5.getText()=="X" && x9.getText()=="X"){
+            JOptionPane.showMessageDialog(null, "Ganó!!!");        
+        }
+        if (x3.getText()=="X" && x5.getText()=="X" && x7.getText()=="X"){
+            JOptionPane.showMessageDialog(null, "Ganó!!!");        
+        }
+        
+        if (x1.getText()=="O" && x2.getText()=="O" && x3.getText()=="O"){
+            JOptionPane.showMessageDialog(null, "Ganó!!!");        
+        }
+        if (x4.getText()=="O" && x5.getText()=="O" && x6.getText()=="O"){
+            JOptionPane.showMessageDialog(null, "Ganó!!!");        
+        }
+        if (x7.getText()=="O" & x8.getText()=="O" & x9.getText()=="O"){
+            JOptionPane.showMessageDialog(null, "Ganó!!!");        
+        }
+        if (x1.getText()=="O" && x4.getText()=="O" && x7.getText()=="O"){
+            JOptionPane.showMessageDialog(null, "Ganó!!!");        
+        }
+        if (x2.getText()=="O" && x5.getText()=="O" && x8.getText()=="O"){
+            JOptionPane.showMessageDialog(null, "Ganó!!!");        
+        }
+        if (x3.getText()=="O" && x6.getText()=="O" && x9.getText()=="O"){
+            JOptionPane.showMessageDialog(null, "Ganó!!!");        
+        }
+        if (x1.getText()=="O" && x5.getText()=="O" && x9.getText()=="O"){
+            JOptionPane.showMessageDialog(null, "Ganó!!!");        
+        }
+        if (x3.getText()=="O" && x5.getText()=="O" && x7.getText()=="O"){
+            JOptionPane.showMessageDialog(null, "Ganó!!!"); 
+    }*/
+    public Tateti(){
         initComponents();
         x1.setEnabled(false);
         x2.setEnabled(false);
@@ -68,9 +130,11 @@ public class Tateti extends javax.swing.JFrame {
         FONDO = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        inicio.setText("INICIO");
+        inicio.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        inicio.setText("A JUGAR!!!");
         inicio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 inicioMouseClicked(evt);
@@ -78,6 +142,7 @@ public class Tateti extends javax.swing.JFrame {
         });
         getContentPane().add(inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, -1, -1));
 
+        stop.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         stop.setText("STOP");
         stop.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -86,22 +151,25 @@ public class Tateti extends javax.swing.JFrame {
         });
         getContentPane().add(stop, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, -1, -1));
 
+        op1juan.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         op1juan.setText("Juan");
         op1juan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 op1juanMouseClicked(evt);
             }
         });
-        getContentPane().add(op1juan, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
+        getContentPane().add(op1juan, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, -1, -1));
 
+        op2pedro.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         op2pedro.setText("Pedro");
         op2pedro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 op2pedroMouseClicked(evt);
             }
         });
-        getContentPane().add(op2pedro, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, -1, -1));
+        getContentPane().add(op2pedro, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, -1, -1));
 
+        x2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         x2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 x2MouseClicked(evt);
@@ -109,6 +177,7 @@ public class Tateti extends javax.swing.JFrame {
         });
         getContentPane().add(x2, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 88, 57, 48));
 
+        x3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         x3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 x3MouseClicked(evt);
@@ -116,6 +185,7 @@ public class Tateti extends javax.swing.JFrame {
         });
         getContentPane().add(x3, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 88, 57, 48));
 
+        x4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         x4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 x4MouseClicked(evt);
@@ -123,6 +193,7 @@ public class Tateti extends javax.swing.JFrame {
         });
         getContentPane().add(x4, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 164, 57, 48));
 
+        x1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         x1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 x1MouseClicked(evt);
@@ -135,6 +206,7 @@ public class Tateti extends javax.swing.JFrame {
         });
         getContentPane().add(x1, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 88, 57, 48));
 
+        x5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         x5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 x5MouseClicked(evt);
@@ -142,6 +214,7 @@ public class Tateti extends javax.swing.JFrame {
         });
         getContentPane().add(x5, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 164, 57, 48));
 
+        x9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         x9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 x9MouseClicked(evt);
@@ -149,6 +222,7 @@ public class Tateti extends javax.swing.JFrame {
         });
         getContentPane().add(x9, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 242, 57, 48));
 
+        x6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         x6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 x6MouseClicked(evt);
@@ -161,6 +235,7 @@ public class Tateti extends javax.swing.JFrame {
         });
         getContentPane().add(x6, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 164, 57, 48));
 
+        x7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         x7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 x7MouseClicked(evt);
@@ -168,6 +243,7 @@ public class Tateti extends javax.swing.JFrame {
         });
         getContentPane().add(x7, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 242, 57, 48));
 
+        x8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         x8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 x8MouseClicked(evt);
@@ -175,6 +251,7 @@ public class Tateti extends javax.swing.JFrame {
         });
         getContentPane().add(x8, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 242, 57, 48));
 
+        reset.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         reset.setText("RESET");
         reset.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -183,34 +260,41 @@ public class Tateti extends javax.swing.JFrame {
         });
         getContentPane().add(reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, -1, -1));
 
+        jugador2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jugador2.setText("JUGADOR");
         jugador2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jugador2MouseClicked(evt);
             }
         });
+        jugador2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jugador2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 0, 0));
         jLabel2.setText("TA TE TI");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 180, 50));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 180, 50));
 
-        jButton1.setText("INICIO");
+        jButton1.setText("Inicio");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
 
-        jButton2.setText("APLICACION");
+        jButton2.setText("Salir");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, -1, -1));
 
         FONDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tateti2.2.jpg"))); // NOI18N
         getContentPane().add(FONDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 470, 350));
@@ -466,9 +550,7 @@ public class Tateti extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
-        Ventana3 v3 =new Ventana3();
-        v3.setVisible(true);
-        dispose();
+       System.exit(0);
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
@@ -477,6 +559,11 @@ public class Tateti extends javax.swing.JFrame {
         v1.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jugador2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jugador2ActionPerformed
+        // TODO add your handling code here:
+               
+    }//GEN-LAST:event_jugador2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -513,10 +600,7 @@ public class Tateti extends javax.swing.JFrame {
         });
         
         
-     String [][] tablero =new String [3][3] ;
-     int i=0;
-     int ii=0;
-     
+ 
      
      
         
