@@ -19,19 +19,8 @@ import java.util.HashSet;
 import javax.swing.JOptionPane;
 public class Tateti extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Tateti
-     
-    int x1;
-    int x2;
-    int x3;
-    int x4;
-    int x5;
-    int x6;
-    int x7;
-    int x8;
-    int x9;
     
+        
         
     public void ganador(){
         if (x1.getText()=="X" && x2.getText()=="X" && x3.getText()=="X"){
@@ -59,30 +48,31 @@ public class Tateti extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Ganó!!!");        
         }
         
-        if (x1.getText()=="O" && x2.getText()=="O" && x3.getText()=="O"){
+        if (x1.getText()=="0" && x2.getText()=="0" && x3.getText()=="0"){
             JOptionPane.showMessageDialog(null, "Ganó!!!");        
         }
-        if (x4.getText()=="O" && x5.getText()=="O" && x6.getText()=="O"){
+        if (x4.getText()=="0" && x5.getText()=="0" && x6.getText()=="0"){
             JOptionPane.showMessageDialog(null, "Ganó!!!");        
         }
-        if (x7.getText()=="O" & x8.getText()=="O" & x9.getText()=="O"){
+        if (x7.getText()=="0" & x8.getText()=="0" & x9.getText()=="0"){
             JOptionPane.showMessageDialog(null, "Ganó!!!");        
         }
-        if (x1.getText()=="O" && x4.getText()=="O" && x7.getText()=="O"){
+        if (x1.getText()=="0" && x4.getText()=="0" && x7.getText()=="0"){
             JOptionPane.showMessageDialog(null, "Ganó!!!");        
         }
-        if (x2.getText()=="O" && x5.getText()=="O" && x8.getText()=="O"){
+        if (x2.getText()=="0" && x5.getText()=="0" && x8.getText()=="0"){
             JOptionPane.showMessageDialog(null, "Ganó!!!");        
         }
-        if (x3.getText()=="O" && x6.getText()=="O" && x9.getText()=="O"){
+        if (x3.getText()=="0" && x6.getText()=="0" && x9.getText()=="0"){
             JOptionPane.showMessageDialog(null, "Ganó!!!");        
         }
-        if (x1.getText()=="O" && x5.getText()=="O" && x9.getText()=="O"){
+        if (x1.getText()=="0" && x5.getText()=="0" && x9.getText()=="0"){
             JOptionPane.showMessageDialog(null, "Ganó!!!");        
         }
-        if (x3.getText()=="O" && x5.getText()=="O" && x7.getText()=="O"){
+        if (x3.getText()=="0" && x5.getText()=="0" && x7.getText()=="0"){
             JOptionPane.showMessageDialog(null, "Ganó!!!"); 
-    }*/
+         }
+    }
     public Tateti(){
         initComponents();
         x1.setEnabled(false);
@@ -525,9 +515,9 @@ public class Tateti extends javax.swing.JFrame {
 
     private void jugador2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jugador2MouseClicked
         // TODO add your handling code here:
+        ganador();
           
-    op1juan.setSelected(false);
-    op2pedro.setSelected(true);
+  
     }//GEN-LAST:event_jugador2MouseClicked
 
     private void op1juanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_op1juanMouseClicked
